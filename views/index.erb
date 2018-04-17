@@ -1,0 +1,34 @@
+
+
+        <!-- /.col-lg-3 -->
+
+        <div class="col-lg-9">
+
+        <br>
+
+          <div class="row">
+
+
+    <%# t.text "good_title"
+    t.text "good_description"
+    t.text "good_cat"
+    t.decimal "good_price"
+    t.boolean "good_sale" %>
+
+            <% @goods.each {|good| %>
+            <%= " <div class=\"col-lg-4 col-md-6 mb-4\"> <div class=\"card h-100\"><a href=\"/goods/#{good.id}\"> 
+            <img class=\"card-img-top\" src=\"http://placehold.it/700x400\" alt=\"\"></a><div class=\"card-body\"> 
+            <h4 class=\"card-title\"><a href=\"/goods/#{good.id}\">#{good.good_title}</a></h4><h5>#{good.good_price}</h5> 
+            <p class=\"card-text\">#{good.good_description}</p></div></div></div> " %>
+            <% } %>
+
+
+
+          </div>
+          <!-- /.row -->
+
+        </div>
+        <!-- /.col-lg-9 -->
+
+      </div>
+      <!-- /.row -->

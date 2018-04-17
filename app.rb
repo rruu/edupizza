@@ -6,12 +6,13 @@ require 'sinatra/activerecord'
 # debug on/off
 #set :show_exceptions, false
 
-#class Goods < ActiveRecord::Base
+class Goods < ActiveRecord::Base
 #    validates :post_title, uniqueness: true
 #    validates :post_body, uniqueness: true
-#end
+end
 
-
+class Categories < ActiveRecord::Base
+end
 
 before do
     @greeting = ["Bones Festes!","节日快乐 ","Sretni praznici!","Glædelig jul og godt nytår","Prettige feestdagen",
@@ -20,12 +21,20 @@ before do
         "행복한 휴일이 되십시오!","Felix feriarum","Linksmų švenčių!","节日快乐!","سال نو مبارک!","Wesołych Świąt","Boas Festas!","Sărbători fericite!",
         "С праздником!","Vesele praznike!","Holide Ezimyoli","¡Felices Fiestas!","God Helg","Mutlu tatiller!","Chúc kỳ nghỉ lễ vui vẻ!","Cyfarchion y tymor"]
     @random_greeting = @greeting.sample
+
+    @menu = Categories.all
 end
 
-
-
 get '/' do
-erb :layout
+    @goods = Goods.all
+    erb :index
+   
   end
+
+get '/about' do
+    @message, @type = 'Message', 'info'
+    erb :about
+    
+end
 
 
