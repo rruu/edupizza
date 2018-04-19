@@ -28,13 +28,14 @@ end
 get '/' do
     @goods = Goods.all
     erb :index
-   
   end
 
 get '/about' do
     @message, @type = 'Message', 'info'
     erb :about
-    
 end
 
-
+get '/cart' do
+    #@message, @type = 'Message', 'info'
+    erb :cart
+end
