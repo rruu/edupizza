@@ -2,27 +2,19 @@
 
         <!-- /.col-lg-3 -->
 
-        <div class="col-lg-9">
+        <div class="mt-4 col-lg-9">
 
-        <br>
 
           <div class="row">
 
 
-    <%# t.text "good_title"
-    t.text "good_description"
-    t.text "good_cat"
-    t.decimal "good_price"
-    t.boolean "good_sale" %>
-
-    <%# <li><a class="add-to-cart" href="#" data-name="Apple" data-price="1.22">Apple $1.22</a></li> %>
-
             <% @goods.each {|good| %>
             <%= " <div class=\"col-lg-4 col-md-6 mb-4\"> <div class=\"card h-100\"><a href=\"/goods/#{good.id}\"> 
             <img class=\"card-img-top\" src=\"http://placehold.it/700x400\" alt=\"\"></a><div class=\"card-body\"> 
-            <h4 class=\"card-title\"><a class=\"add-to-cart\" data-name=\"#{good.good_title}\" data-price=\"#{good.good_price}\" href=\"/goods/#{good.id}\">#{good.good_title}</a></h4><h5>#{good.good_price}</h5> 
+            <h4 class=\"card-title\"><a class=\"add-to-cart\" data-name=\"#{good.good_title}\" data-price=\"#{good.good_price}\" href=\"/goods/#{good.id}\">#{good.good_title}</a></h4><h5 class=\"dollar\">#{good.good_price}</h5> 
             <p class=\"card-text\">#{good.good_description}</p></div></div></div> " %>
             <% } %>
+
 
           </div>
           <!-- /.row -->

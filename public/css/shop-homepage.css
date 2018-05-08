@@ -13,3 +13,11 @@ body {
     padding-top: 56px;
   }
 }
+
+/* .dollar:before {
+    content: '$ ';
+} */
+
+.dollar:after {
+    content: ' $';
+}

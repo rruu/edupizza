@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_04_17_125848) do
+ActiveRecord::Schema.define(version: 2018_04_22_205806) do
 
   create_table "categories", force: :cascade do |t|
     t.text "categorie_title"
@@ -23,6 +23,15 @@ ActiveRecord::Schema.define(version: 2018_04_17_125848) do
     t.text "good_cat"
     t.decimal "good_price"
     t.boolean "good_sale"
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.text "ordser_name"
+    t.text "ordser_email"
+    t.text "ordser_phone"
+    t.text "ordser_goods"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
